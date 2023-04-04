@@ -1,0 +1,60 @@
+:root {
+    --main-bg-color: #171717;
+    --nav-bar-bg-color: #101010;
+    --main-text-color: #dfdfdf;
+}
+
+html,body {
+    font-family: "Roboto", sans-serif;
+    color: var(--main-text-color);
+    background-color: var(--main-bg-color);
+}
+
+h1 {
+    font-size: 48px;
+}
+h2 {
+    font-size: 36px;
+}
+h3 {
+    font-size: 24px;
+}
+p {
+    font-size: 14px;
+}
+
+/*define horizontal-table characteristics*/
+div.horizontal-table {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+div.horizontal-table div {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/*****************************************/
+
+div.nav-bar {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    background-color: var(--nav-bar-bg-color);
+}
+
+/*define cool underline for paragraph elements within nav-bar */
+div.nav-bar div > p::after {
+    content: "";
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: var(--main-text-color);
+    transition: 300ms;
+}
+
+div.nav-bar div > p:hover::after {
+    width: 100%;
+}
+/*****************************************/
+
