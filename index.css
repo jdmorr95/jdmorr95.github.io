@@ -1,5 +1,5 @@
 :root {
-    --main-bg-color: #171717;
+    --main-bg-color: #131313;
     --nav-bar-bg-color: #101010;
     --main-text-color: #dfdfdf;
 }
@@ -10,50 +10,60 @@ html,body {
     background-color: var(--main-bg-color);
 }
 
-h1 {
+p.header {
     font-size: 48px;
+    font-weight: 500;
 }
-h2 {
+p.subheader {
     font-size: 36px;
 }
-h3 {
+p.subtitle {
     font-size: 24px;
 }
 p {
     font-size: 14px;
+    display: inline-block;
 }
 
-/*define horizontal-table characteristics*/
-div.horizontal-table {
+div.page-container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+/*define horizontal-flex characteristics*/
+div.horizontal-flex {
     display: flex;
     flex-direction: row;
     align-items: stretch;
 }
 
-div.horizontal-table div {
+div.horizontal-flex div {
     padding-left: 10px;
     padding-right: 10px;
 }
 /*****************************************/
 
 div.nav-bar {
-    position: absolute;
+    position: sticky;
     top: 0px;
     width: 100%;
     background-color: var(--nav-bar-bg-color);
 }
 
-/*define cool underline for paragraph elements within nav-bar */
-div.nav-bar div > p::after {
+/*define cool dynamic-underline for text elements within nav-bar */
+.dynamic-underline::after {
     content: "";
     width: 0px;
-    height: 1px;
+    height: 0.1em;
     display: block;
     background: var(--main-text-color);
     transition: 300ms;
 }
 
-div.nav-bar div > p:hover::after {
+.dynamic-underline:hover::after {
     width: 100%;
 }
 /*****************************************/
